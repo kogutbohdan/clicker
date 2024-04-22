@@ -1,0 +1,60 @@
+<ButtonMenuLevels@Button>:
+    on_press:root.switch_to_level(self)
+
+<Label>:
+    font_name:'IndieFlower-Regular.ttf'
+    font_size:'30dp'
+    color: '#00cc00'
+
+<Button>:
+    size_hint_y:0.3
+    background_color:'#0000aa'
+    font_size:'15dp'
+
+<Zombi>:
+    background_color:'#ffffff'
+    size_hint_y:1
+
+<BoxLayoutMenu@BoxLayout>:
+    orientation:'vertical'
+    padding:'20dp'
+    spacing:'20dp'
+    Label:
+        opacity: 0.5
+        text:'Zombi Adventure'
+        size_hint_y: .2
+
+<MenuScreen>:
+    canvas.before:
+        Color:
+            rgba: 0,0.3,0.5,1
+        Rectangle:
+            pos:self.pos
+            size:self.size
+<Levels>:
+    BoxLayoutMenu:
+        ButtonMenuLevels:
+            text: 'Level1'
+        ButtonMenuLevels:
+            text:'Level2'
+        ButtonMenuLevels:
+            text:'Level3'
+        ButtonMenuLevels:
+            text:'Level4'
+
+<MenuGame>:
+    BoxLayoutMenu:
+        padding:10,10,10,10
+        Button:
+            text: "Start"
+            on_press: root.to_game()
+            size_hint_y:0.1
+
+
+<GameScreen>:
+    canvas.before:
+        Color:
+            rgba: 0,0.3,0.5,1
+        Rectangle:
+            pos:self.pos
+            size:self.size
